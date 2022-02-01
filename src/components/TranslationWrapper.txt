@@ -1,0 +1,18 @@
+import React, { useState } from 'react';
+import { IntlProvider } from 'react-intl';
+
+interface Props {
+  children: any
+}
+
+const TranslationWrapper: React.FC<Props> = ({ children }) => {
+
+
+  return(
+    <IntlProvider locale={} messages={} >
+      {children}
+    </IntlProvider>
+  )
+}
+
+export default TranslationWrapper;

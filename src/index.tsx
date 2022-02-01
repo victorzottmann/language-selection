@@ -1,17 +1,25 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import reportWebVitals from './reportWebVitals';
+import { IntlProvider } from 'react-intl';
+
+import appLocales from './languageConfig';
+
+const defaultLocale = 'en';
+const local: string = 'en';
+const localeConfig = appLocales[local];
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <IntlProvider 
+    locale={localeConfig.locale} 
+    messages={localeConfig.messages} 
+    defaultLocale={defaultLocale}
+  >
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>
+  </IntlProvider>,
   document.getElementById('root')
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
