@@ -1,6 +1,6 @@
 # Language Selection  
 
-This is project implements internationalization with the React Intl API. The objective was to make it possible to switch between English and Portuguese from a dropdown language selection menu.
+This is project implements internationalization with the [React Intl API (FormatJS)](https://formatjs.io/docs/react-intl/). The objective was to make it possible to switch between English and Portuguese from a dropdown language selection menu.
 
 ### How to run the project
 
