@@ -1,4 +1,6 @@
 {
+  "H1_TEXT": "Hello World!",
+  "P_TEXT": "This is a test with select translations",
   "PRODUCTS_TABLE_TITLE": "Products - Summary",
   "DYNAMIC_MESSAGE_TEST": "Today's date is {date}. The location is {location}."
 }

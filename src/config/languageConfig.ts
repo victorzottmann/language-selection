@@ -1,5 +1,5 @@
-import en from './translations/en.json'
-import pt from './translations/pt.json'
+import en from '../translations/en.json'
+import pt from '../translations/pt.json'
 
 interface LocaleConfig {
   [key: string]: any

@@ -1,4 +1,6 @@
 {
+  "H1_TEXT": "Olá mundo!",
+  "P_TEXT": "Este é um teste com traduções selecionadas.",
   "PRODUCTS_TABLE_TITLE": "Todos os Produtos",
   "DYNAMIC_MESSAGE_TEST": "A data de hoje é {date}. A localização {location}."
 }

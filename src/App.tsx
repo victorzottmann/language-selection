@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import { useContext } from 'react';
 import styled from 'styled-components';
-import './App.css'
-import appLocales from './languageConfig';
 import { useIntl } from 'react-intl';
+import { TranslationContext } from './components/TranslationWrapper';
+import './App.css'
 
 const StyledSelect = styled.select`
   padding: 0 15px;
@@ -11,33 +11,34 @@ const StyledSelect = styled.select`
   border-radius: 5px;
 `
 
-function App() {
-  console.log('[appLocales]', appLocales['en']);
+function App() {  
+  const context = useContext(TranslationContext);
+
+  console.log('[CONTEXT LOCALE]', context.locale);
   
-  const [locale, setLocale] = useState(appLocales['en'].locale);
-
-  const selectLanguage = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    const newLocale: string = e.target.value;
-    setLocale(appLocales[newLocale].locale);
-  }
-
-  console.log('[LOCALE]', locale);
-
   const intl = useIntl();
 
   return (
     <div className="App">
-      <StyledSelect value={locale} onChange={selectLanguage}>
+      <StyledSelect value={context.locale} onChange={context.selectLanguage}>
         <option value="en">English</option>
         <option value="pt">Portuguese</option>
       </StyledSelect>
-
-      {intl.formatMessage({id: "PRODUCTS_TABLE_TITLE"}, {
-        defaultMessage: "Products - Summary",
-      })}
-
-      <h1>Hello World!</h1>
-      <p>This is a test with select translations</p>
+      <h3>
+        {intl.formatMessage({id: "PRODUCTS_TABLE_TITLE"}, {
+          defaultMessage: "Products - Summary",
+        })}
+      </h3>
+      <h1>
+        {intl.formatMessage({id: "H1_TEXT"},{
+          defaultMessage: "Hello World!"
+        })}
+      </h1>
+      <p>
+        {intl.formatMessage({id: "P_TEXT"}, {
+          defaultMessage: "This is a test with select translations"
+        })}
+      </p>
     </div>
   );
 }

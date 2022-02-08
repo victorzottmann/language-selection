@@ -1,25 +1,15 @@
-import React, { useState } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import { IntlProvider } from 'react-intl';
-
-import appLocales from './languageConfig';
-
-const defaultLocale = 'en';
-const local: string = 'en';
-const localeConfig = appLocales[local];
+import TranslationWrapper from './components/TranslationWrapper';
 
 ReactDOM.render(
-  <IntlProvider 
-    locale={localeConfig.locale} 
-    messages={localeConfig.messages} 
-    defaultLocale={defaultLocale}
-  >
+  <TranslationWrapper>
     <React.StrictMode>
       <App />
     </React.StrictMode>
-  </IntlProvider>,
+  </TranslationWrapper>,
   document.getElementById('root')
 );
 
